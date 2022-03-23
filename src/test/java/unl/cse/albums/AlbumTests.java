@@ -62,12 +62,12 @@ public class AlbumTests {
 
 		Album actual = Album.getDetailedAlbum(5);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(actual.getAlbumId(), 5);
-		Assertions.assertEquals(actual.getTitle(), "Rain Dogs");
-		Assertions.assertEquals(actual.getYear(), 1985);
-		Assertions.assertEquals(actual.getBand().getBandId(), 3);
-		Assertions.assertEquals(actual.getBand().getName(), "Tom Waits");
-		Assertions.assertEquals(expectedSongs, actual.getSongTitles());
+		Assertions.assertEquals(5, actual.getAlbumId());
+		Assertions.assertEquals("Rain Dogs", actual.getTitle());
+		Assertions.assertEquals(1985, actual.getYear());
+		Assertions.assertEquals(3, actual.getBand().getBandId());
+		Assertions.assertEquals("Tom Waits", actual.getBand().getName());
+		Assertions.assertEquals(actual.getSongTitles(), expectedSongs);
 
 	}
 
@@ -88,12 +88,12 @@ public class AlbumTests {
 
 		Album actual = Album.getDetailedAlbum(4);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(actual.getAlbumId(), 4);
-		Assertions.assertEquals(actual.getTitle(), "In Utero");
-		Assertions.assertEquals(actual.getYear(), 1993);
-		Assertions.assertEquals(actual.getBand().getBandId(), 2);
-		Assertions.assertEquals(actual.getBand().getName(), "Nirvana");
-		Assertions.assertEquals(expectedSongs, actual.getSongTitles());
+		Assertions.assertEquals(4, actual.getAlbumId());
+		Assertions.assertEquals("In Utero", actual.getTitle());
+		Assertions.assertEquals(1993, actual.getYear());
+		Assertions.assertEquals(2, actual.getBand().getBandId());
+		Assertions.assertEquals("Nirvana", actual.getBand().getName());
+		Assertions.assertEquals(actual.getSongTitles(), expectedSongs);
 
 	}
 
@@ -112,12 +112,12 @@ public class AlbumTests {
 
 		Album actual = Album.getDetailedAlbum(654);
 		Assertions.assertNotNull(actual);
-		Assertions.assertEquals(actual.getAlbumId(), 654);
-		Assertions.assertEquals(actual.getTitle(), "Koloss");
-		Assertions.assertEquals(actual.getYear(), 2012);
-		Assertions.assertEquals(actual.getBand().getBandId(), 2478);
-		Assertions.assertEquals(actual.getBand().getName(), "Meshuggah");
-		Assertions.assertEquals(expectedSongs, actual.getSongTitles());
+		Assertions.assertEquals(654, actual.getAlbumId());
+		Assertions.assertEquals("Koloss", actual.getTitle());
+		Assertions.assertEquals(2012, actual.getYear());
+		Assertions.assertEquals(2478, actual.getBand().getBandId());
+		Assertions.assertEquals("Meshuggah", actual.getBand().getName());
+		Assertions.assertEquals(actual.getSongTitles(), expectedSongs);
 
 	}
 
