@@ -1,4 +1,4 @@
-package unl.cse.albums;
+package unl.soc.albums;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,41 +51,7 @@ public class Album {
 
 	public void addSong(String songTitle) {
 		this.songTitles.add(songTitle);
-	}
-	
-	/**
-	 * This method returns a {@link #Album} instance loaded from the 
-	 * database corresponding to the given <code>albumId</code>.  
-	 * Returns <code>null</code> if the <code>albumId</code> is
-	 * invalid.
-	 * 
-	 * All fields are loaded with this method.
-	 * @param albumId
-	 * @return
-	 */
-	public static Album getDetailedAlbum(int albumId) {
-		//TODO in Lab 09
-		return null;
-	}
-	
-	/**
-	 * Returns a list of all albums in the database.  However, this
-	 * is only a summary so only the following items need to be loaded
-	 * from the database:
-	 * <ul>
-	 *   <li>Album ID</li>
-	 *   <li>Album Title</li>
-	 *   <li>Album Year</li>
-	 *   <li>Band ID</li>
-	 *   <li>Band Name</li>
-	 * </ul>
-	 *   
-	 * @return
-	 */
-	public static List<Album> getAlbumSummaries() {
-		//TODO in Lab 09
-		return null;
-	}
+	}	
 
 	@Override
 	public String toString() {

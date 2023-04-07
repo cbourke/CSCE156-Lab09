@@ -1,9 +1,9 @@
 # Computer Science II
 ## Lab 9.0 - Java Database Connectivity API I
 
-An introduction the Java Database Connectivity (JDBC) API in the context of a web application using the albums database.
+An introduction the Java Database Connectivity (JDBC) API in the context 
+of a web application using the albums database.
 
-This is a lab used in Computer Science II (CSCE 156, CSCE 156H) in the [Department of Computer Science & Engineering](https://cse.unl.edu) at the [University of Nebraska-Lincoln](https://unl.edu).
 
 ## Overview
 
@@ -84,7 +84,7 @@ multi-tiered application and web application server environment.
 
 ### 3.1 Modifying Your Application
 
-1.  Open the `unl.cse.albums.DatabaseInfo` source file and change 
+1.  Open the `unl.soc.database.DatabaseInfo` source file and change 
     the login and password information to your CSE MySQL credentials. 
     You can reset these by going to <http://cse.unl.edu/account>.
 
@@ -94,7 +94,7 @@ multi-tiered application and web application server environment.
     application.
 
 3.  The application will not display any album data until you have
-    completed the methods in the `Album` class.
+    completed the methods in the `DataLoader` class.
 
     -   `public static List<Album> getAlbumSummaries()` - This method 
         will query the database and get a complete list of
@@ -113,7 +113,7 @@ multi-tiered application and web application server environment.
     -   Important: do not forget to close your database resources
         (especially connections) after you are finished using them.
 
-    -   A `Test` class has been provided for you to test your 
+    -   A `Demo` class has been provided for you to test your 
         `getAlbumSummaries()` method which you can also adapt to 
         test your `getDetailedAlbum()` method.  A more substantial
         JUnit testing suite has also been provided but assumes that 
@@ -157,7 +157,7 @@ go to <http://localhost:8080/CSCE156-Lab09/> to do so.
 * Test your programs using the provided JUnit test suite(s).  Fix any
 errors and completely debug your programs.
 * Submit the following files through webhandin:
-  * `Album.java`
+  * `DataLoader.java`
 * Run the grader and verify the output to complete your lab.
 
 ## Advanced Activities (Optional)

@@ -1,4 +1,4 @@
-package unl.cse.albums;
+package unl.soc.database;
 
 public class DatabaseInfo {
 

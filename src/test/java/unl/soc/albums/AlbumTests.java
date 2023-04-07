@@ -1,9 +1,12 @@
-package unl.cse.albums;
+package unl.soc.albums;
 
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
+
+import unl.soc.database.DataLoader;
+
 import org.junit.Test;
 
 /**
@@ -27,7 +30,7 @@ public class AlbumTests {
 		Album expectedAlbum04 = new Album(5, "Rain Dogs");
 		Album expectedAlbum05 = new Album(103, "Help!");
 		int expectedNumberOfAlbums = 5;
-		List<Album> actual = Album.getAlbumSummaries();
+		List<Album> actual = DataLoader.loadAlbumSummaries();
 
 		Assertions.assertNotNull(actual);
 		Assertions.assertTrue(actual.contains(expectedAlbum01),
@@ -60,14 +63,14 @@ public class AlbumTests {
 				"Union Square", "Blind Love", "Walking Spanish", "Downtown Train", "Bride of Rain Dog",
 				"Anywhere I Lay My Head");
 
-		Album actual = Album.getDetailedAlbum(5);
+		Album actual = DataLoader.loadDetailedAlbum(5);
 		Assertions.assertNotNull(actual);
 		Assertions.assertEquals(5, actual.getAlbumId());
 		Assertions.assertEquals("Rain Dogs", actual.getTitle());
 		Assertions.assertEquals(1985, actual.getYear());
 		Assertions.assertEquals(3, actual.getBand().getBandId());
 		Assertions.assertEquals("Tom Waits", actual.getBand().getName());
-		Assertions.assertEquals(actual.getSongTitles(), expectedSongs);
+		Assertions.assertEquals(expectedSongs, actual.getSongTitles());
 
 	}
 
@@ -86,14 +89,14 @@ public class AlbumTests {
 				"Frances Farmer Will Have Her Revenge on Seattle", "Dumb", "Very Ape", "Milk It", "Pennyroyal Tea",
 				"Radio Friendly Unit Shifter", "tourette's", "All Apologies");
 
-		Album actual = Album.getDetailedAlbum(4);
+		Album actual = DataLoader.loadDetailedAlbum(4);
 		Assertions.assertNotNull(actual);
 		Assertions.assertEquals(4, actual.getAlbumId());
 		Assertions.assertEquals("In Utero", actual.getTitle());
 		Assertions.assertEquals(1993, actual.getYear());
 		Assertions.assertEquals(2, actual.getBand().getBandId());
 		Assertions.assertEquals("Nirvana", actual.getBand().getName());
-		Assertions.assertEquals(actual.getSongTitles(), expectedSongs);
+		Assertions.assertEquals(expectedSongs, actual.getSongTitles());
 
 	}
 
@@ -110,14 +113,14 @@ public class AlbumTests {
 				"Do Not Look Down", "Behind The Sun", "The Hurt That Finds You First", "Marrow",
 				"Break Those Bones Whose Sinews Gave It Motion", "Swarm", "Demiurge", "The Last Vigil");
 
-		Album actual = Album.getDetailedAlbum(654);
+		Album actual = DataLoader.loadDetailedAlbum(654);
 		Assertions.assertNotNull(actual);
 		Assertions.assertEquals(654, actual.getAlbumId());
 		Assertions.assertEquals("Koloss", actual.getTitle());
 		Assertions.assertEquals(2012, actual.getYear());
 		Assertions.assertEquals(2478, actual.getBand().getBandId());
 		Assertions.assertEquals("Meshuggah", actual.getBand().getName());
-		Assertions.assertEquals(actual.getSongTitles(), expectedSongs);
+		Assertions.assertEquals(expectedSongs, actual.getSongTitles());
 
 	}
 

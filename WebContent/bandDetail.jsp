@@ -1,8 +1,9 @@
-<%@ page import="unl.cse.albums.Band" %>
-<%@ page import="unl.cse.albums.Album" %>
+<%@ page import="unl.soc.albums.Band" %>
+<%@ page import="unl.soc.albums.Album" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Comparator" %>
 <%@ page import="java.util.stream.Collectors" %>
+<%@ page import="unl.soc.database.DataLoader" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -21,9 +22,9 @@
   } catch(Exception e) {
 	  bandId = -1;
   }
-  Band b = Band.getBand(bandId);
+  Band b = DataLoader.loadBand(bandId);
   
-  List<Album> bandAlbums = Album.getAlbumSummaries().stream().filter(a -> a.getBand().equals(b)).sorted(Comparator.comparingInt(Album::getYear)).collect(Collectors.toList());
+  List<Album> bandAlbums = DataLoader.loadAlbumSummaries().stream().filter(a -> a.getBand().equals(b)).sorted(Comparator.comparingInt(Album::getYear)).collect(Collectors.toList());
 %>
 <h1><%=b.getName()%></h1>
 

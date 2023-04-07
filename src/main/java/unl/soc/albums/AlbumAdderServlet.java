@@ -1,4 +1,4 @@
-package unl.cse.albums;
+package unl.soc.albums;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,8 +18,8 @@ public class AlbumAdderServlet extends HttpServlet {
 		String albumYear   = request.getParameter("albumYear");
 		String albumNumber = request.getParameter("albumNumber");
 
-		boolean result = AlbumAdder.addAlbumToDatabase(albumTitle, bandName, albumYear, albumNumber);
-
+		boolean result = false;
+		
 		try {
 			if(result) {
 				response.sendRedirect("index.html");

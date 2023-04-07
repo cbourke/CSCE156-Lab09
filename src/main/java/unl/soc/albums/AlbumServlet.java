@@ -1,7 +1,8 @@
-package unl.cse.albums;
+package unl.soc.albums;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,9 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-public class AlbumDetailServlet extends HttpServlet{
+import unl.soc.database.DataLoader;
+
+public class AlbumServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -19,28 +22,17 @@ public class AlbumDetailServlet extends HttpServlet{
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) {
 
-		int albumId = Integer.parseInt(request.getParameter("albumId"));
-		
 		//set CORS upfront
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
 		response.setHeader("Access-Control-Max-Age", "3600");
 		response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 		
-		Album a = Album.getDetailedAlbum(albumId);
-		if(a == null) {
-			try {
-				//alright alright alright
-				response.sendError(420);
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-		}
-	    JsonElement je = gson.toJsonTree(a);
+		List<Album> albums = DataLoader.loadAlbumSummaries();
+	    JsonElement je = gson.toJsonTree(albums);
 	    JsonObject jo = new JsonObject();
-	    jo.add("album", je);
+	    jo.add("albums", je);
 	    String jsonResponse = jo.toString();
-	    System.out.println(jsonResponse);
 
 	    response.setContentType("application/json");
 	    PrintWriter out;
@@ -53,6 +45,4 @@ public class AlbumDetailServlet extends HttpServlet{
 		}
 	 
 	}
-	
-
 }

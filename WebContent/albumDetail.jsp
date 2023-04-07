@@ -1,4 +1,5 @@
-<%@ page import="unl.cse.albums.Album" %>
+<%@ page import="unl.soc.albums.Album" %>
+<%@ page import="unl.soc.database.DataLoader" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -17,7 +18,7 @@
   } catch(Exception e) {
 	  albumId = -1;
   }
-  Album a = Album.getDetailedAlbum(albumId); %>
+  Album a = DataLoader.loadDetailedAlbum(albumId); %>
 <h1><%=a.getTitle()%></h1>
 
 <p>By <i><%=a.getBand().getName()%></i>, (<%=a.getYear()%>)</p>
