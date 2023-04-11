@@ -11,7 +11,7 @@
   </welcome-file-list>
   <servlet>
     <servlet-name>AlbumServlet</servlet-name>
-    <servlet-class>unl.cse.albums.AlbumServlet</servlet-class>
+    <servlet-class>unl.soc.albums.AlbumServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AlbumServlet</servlet-name>
@@ -19,7 +19,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AlbumDetailServlet</servlet-name>
-    <servlet-class>unl.cse.albums.AlbumDetailServlet</servlet-class>
+    <servlet-class>unl.soc.albums.AlbumDetailServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AlbumDetailServlet</servlet-name>
@@ -27,7 +27,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>AlbumAdderServlet</servlet-name>
-    <servlet-class>unl.cse.albums.AlbumAdderServlet</servlet-class>
+    <servlet-class>unl.soc.albums.AlbumAdderServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AlbumAdderServlet</servlet-name>
