@@ -3,7 +3,7 @@ package unl.soc.database;
 public class DatabaseInfo {
 
 	/**
-	 * Connection parameters that are necessary for CSE's configuration
+	 * Connection parameters that are necessary for server configuration
 	 */
 	public static final String PARAMETERS = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 

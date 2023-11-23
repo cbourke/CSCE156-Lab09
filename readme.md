@@ -1,5 +1,9 @@
 # Computer Science II
 ## Lab 9.0 - Java Database Connectivity API I
+[School of Computing](https://computing.unl.edu)  
+[College of Engineering](https://engineering.unl.edu/)  
+[University of Nebraska-Lincoln](https://unl.edu)  
+[University of Nebraska-Omaha](https://unomaha.edu)  
 
 An introduction the Java Database Connectivity (JDBC) API in the context 
 of a web application using the albums database.
@@ -12,7 +16,7 @@ of a web application using the albums database.
 Prior to lab you should read/review the following resources.
 
 *   Make sure that the Albums database is installed and available in
-    your MySQL instance on CSE
+    your MySQL database
 
 *   Review a JDBC tutorial from Oracle:  
     <http://download.oracle.com/javase/tutorial/jdbc/>
@@ -85,8 +89,7 @@ multi-tiered application and web application server environment.
 ### 3.1 Modifying Your Application
 
 1.  Open the `unl.soc.database.DatabaseInfo` source file and change 
-    the login and password information to your CSE MySQL credentials. 
-    You can reset these by going to <http://cse.unl.edu/account>.
+    the login and password information to your MySQL credentials. 
 
 2.  The HTML, JavaScript, etc. has been provided for you. Feel free to
     make modifications these files, but you should know what you are
