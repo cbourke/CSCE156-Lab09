@@ -88,3 +88,4 @@ figures/_minted*
 
 #
 .DS_Store
+build/
