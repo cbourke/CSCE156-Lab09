@@ -1,4 +1,4 @@
-package unl.soc.albums;
+package unl.soc.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
