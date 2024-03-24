@@ -1,14 +1,34 @@
 package unl.soc.database;
 
+/**
+ * Database connection configuration 
+ */
 public class DatabaseInfo {
 
 	/**
-	 * Connection parameters that are necessary for server configuration
+	 * User name used to connect to the SQL server
 	 */
-	public static final String PARAMETERS = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-
 	public static final String USERNAME = "login";
+
+	/**
+	 * Password used to connect to the SQL server
+	 */
 	public static final String PASSWORD = "password";
-	public static final String URL = "jdbc:mysql://cse.unl.edu/" + USERNAME + PARAMETERS;
+
+	/**
+	 * Connection parameters that may be necessary for server configuration
+	 * 
+	 */
+	public static final String PARAMETERS = "";
+
+	/**
+	 * SQL server to connect to
+	 */
+	public static final String SERVER = "cse-linux-01.unl.edu";
+
+	/**
+	 * Fully formatted URL for a JDBC connection
+	 */
+	public static final String URL = String.format("jdbc:mysql://%s/%s?%s", SERVER, USERNAME, PARAMETERS);
 
 }
