@@ -19,11 +19,13 @@ public class DataLoader {
 
 	/**
 	 * This method returns a {@link #Album} instance loaded from the 
-	 * database corresponding to the given <code>albumId</code>.  
-	 * Returns <code>null</code> if the <code>albumId</code> is
+	 * database corresponding to the given {@code albumId}.  
+	 * Returns {@code null} if the {@code albumId} is
 	 * invalid.
 	 * 
-	 * All fields are loaded with this method.
+	 * All fields are loaded with this method including band information,
+	 * musicians, and album songs.
+	 * 
 	 * @param albumId
 	 * @return
 	 */
@@ -53,8 +55,8 @@ public class DataLoader {
 
 	/**
 	 * This method returns a {@link #Band} instance loaded from the 
-	 * database corresponding to the given <code>bandId</code>.  
-	 * Throws an {@link IllegalStateException} upon an invalid <code>bandId</code>.
+	 * database corresponding to the given {@code bandId}.  
+	 * Throws an {@link IllegalStateException} upon an invalid {@code bandId}.
 	 * All fields are loaded with this method.
 	 * 
 	 * @param bandId
@@ -84,14 +86,14 @@ public class DataLoader {
 			ps.setInt(1, bandId);
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				b = new Band(bandId, rs.getString("name"));
+				String bandName = rs.getString("name");
+				b = new Band(bandId, bandName);
 			} else {
 				throw new IllegalStateException("no such band with bandId = " + bandId);
 			}
 			rs.close();
+			ps.close();
 		} catch (SQLException e) {
-			System.out.println("SQLException: ");
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 
@@ -102,25 +104,27 @@ public class DataLoader {
 			ps.setInt(1, bandId);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				b.addMember(rs.getString("lastName") + ", " + rs.getString("firstName"));
+				String musicianLastName = rs.getString("lastName");
+				String musicianFirstName = rs.getString("firstName");
+				b.addMember(musicianLastName + ", " + musicianFirstName);
 			}
 			rs.close();
+			ps.close();
 		} catch (SQLException e) {
-			System.out.println("SQLException: ");
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 
 		try {
-			if(rs != null && !rs.isClosed())
+			if(rs != null && !rs.isClosed()) {
 				rs.close();
-			if(ps != null && !ps.isClosed())
+			}
+			if(ps != null && !ps.isClosed()) {
 				ps.close();
-			if(conn != null && !conn.isClosed())
+			}
+			if(conn != null && !conn.isClosed()) {
 				conn.close();
+			}
 		} catch (SQLException e) {
-			System.out.println("SQLException: ");
-			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 		return b;

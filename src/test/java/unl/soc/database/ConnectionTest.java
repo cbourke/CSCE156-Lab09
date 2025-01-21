@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import org.junit.Test;
 import org.junit.Test.None;
 
-import unl.soc.database.DatabaseInfo;
-
 public class ConnectionTest {
 
 	@Test(expected = None.class)

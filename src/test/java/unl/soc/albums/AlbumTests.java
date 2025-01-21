@@ -70,7 +70,7 @@ public class AlbumTests {
 		Assertions.assertEquals(1985, actual.getYear());
 		Assertions.assertEquals(3, actual.getBand().getBandId());
 		Assertions.assertEquals("Tom Waits", actual.getBand().getName());
-		Assertions.assertEquals(expectedSongs, actual.getSongTitles());
+		Assertions.assertEquals(expectedSongs, actual.getSongTitles(), "You do not appear to be loading song data correctly.");
 
 	}
 
@@ -96,7 +96,7 @@ public class AlbumTests {
 		Assertions.assertEquals(1993, actual.getYear());
 		Assertions.assertEquals(2, actual.getBand().getBandId());
 		Assertions.assertEquals("Nirvana", actual.getBand().getName());
-		Assertions.assertEquals(expectedSongs, actual.getSongTitles());
+		Assertions.assertEquals(expectedSongs, actual.getSongTitles(), "You do not appear to be loading song data correctly.");
 
 	}
 
@@ -120,7 +120,7 @@ public class AlbumTests {
 		Assertions.assertEquals(2012, actual.getYear());
 		Assertions.assertEquals(2478, actual.getBand().getBandId());
 		Assertions.assertEquals("Meshuggah", actual.getBand().getName());
-		Assertions.assertEquals(expectedSongs, actual.getSongTitles());
+		Assertions.assertEquals(expectedSongs, actual.getSongTitles(), "You do not appear to be loading song data correctly.");
 
 	}
 

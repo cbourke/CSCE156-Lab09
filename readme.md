@@ -137,7 +137,8 @@ take the following steps.
     in the project explorer.
     
 2.  Click "play" button like normal, but a "Run As" dialog box should 
-    popup.  Select "Run on Server" and "OK".
+    popup.  Select "Run on Server" and "OK".  Alternatively, select the
+    dropdown in the play button and select "Run As", "Run on Server"
     
 3.  Under "Basic" select "J2EE Preview" and click "Finish"
 
