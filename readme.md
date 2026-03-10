@@ -19,7 +19,7 @@ Prior to lab you should read/review the following resources.
     your MySQL database
 
 *   Review a JDBC tutorial from Oracle:  
-    <http://download.oracle.com/javase/tutorial/jdbc/>
+    <https://docs.oracle.com/javase/tutorial/jdbc/>
 
 ### Lab Objectives & Topics
 
